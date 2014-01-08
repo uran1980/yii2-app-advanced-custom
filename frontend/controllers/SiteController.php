@@ -10,6 +10,8 @@ use common\models\User;
 use yii\web\BadRequestHttpException;
 use yii\helpers\Security;
 
+use common\helpers\AppDebug;
+
 class SiteController extends Controller
 {
 	public function behaviors()
@@ -49,6 +51,21 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
+        // debug info ----------------------------------------------------------
+        AppDebug::dump([
+            'method'                    => __METHOD__,
+            'line'                      => __LINE__,
+            'YII_ENV'                   => YII_ENV,
+            'module'                    => $this->module->id,
+            'controller'                => $this->id,
+            'action'                    => $this->action->id,
+            'Yii::$app->getBasePath()'  => Yii::$app->getBasePath(),
+            'controllerNamespace'       => Yii::$app->controllerNamespace,
+            'controllerPath'            => Yii::$app->controllerPath,
+            'defaultRoute'              => Yii::$app->defaultRoute,
+        ]);
+        // ---------------------------------------------------------------------
+
 		return $this->render('index');
 	}
 
