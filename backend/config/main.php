@@ -1,5 +1,6 @@
 <?php
-$rootDir = dirname(dirname(__DIR__));
+// @see https://github.com/yiisoft/yii2/blob/master/docs/guide/configuration.md
+$rootDir = __DIR__ . '/../..';
 
 $params = array_merge(
 	require($rootDir . '/common/config/params.php'),
@@ -8,18 +9,24 @@ $params = array_merge(
 	require(__DIR__ . '/params-local.php')
 );
 
-return [
+$options = [
 	'id' => 'app-backend',
 	'basePath' => dirname(__DIR__),
 	'vendorPath' => $rootDir . '/vendor',
-	'preload' => ['log'],
+	'timeZone' => 'Europe/Kaliningrad',
 	'controllerNamespace' => 'backend\controllers',
-	'modules' => [],
+	'defaultRoute' => 'site',
+	'layout' => '@backend/layouts/main.php',
+	'modules' => [
+		'gii' => $params['modules.gii'],
+		'debug' => $params['modules.debug'],
+	],
 	'extensions' => require($rootDir . '/vendor/yiisoft/extensions.php'),
 	'components' => [
 		'db' => $params['components.db'],
 		'cache' => $params['components.cache'],
 		'mail' => $params['components.mail'],
+		'urlManager' => $params['components.urlManager'],
 		'user' => [
 			'identityClass' => 'common\models\User',
 			'enableAutoLogin' => true,
@@ -39,3 +46,13 @@ return [
 	],
 	'params' => $params,
 ];
+
+if ( YII_ENV == 'dev' ) {
+	$options['preload'] = ['debug', 'log'];
+	$options['modules']['debug'] = $params['modules.debug'];
+}
+else {
+	$options['preload'] = ['log'];
+}
+
+return $options;

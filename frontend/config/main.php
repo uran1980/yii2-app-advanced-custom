@@ -13,28 +13,28 @@ $options = [
 	'id' => 'app-frontend',
 	'basePath' => dirname(__DIR__),
 	'vendorPath' => $rootDir . '/vendor',
-    'timeZone' => 'Europe/Kaliningrad',
-	'controllerNamespace' => 'frontend\controllers',                            // orig
-//    'controllerNamespace' => 'frontend\modules\frontend\controllers',
-//    'controller' => '@frontend\modules\frontend\siteController',
-    'defaultRoute' => 'site',
-//    'layout' => '@frontend/layouts/main.php',
+	'timeZone' => 'Europe/Kaliningrad',
+	'controllerNamespace' => 'frontend\controllers',							// orig
+//	'controllerNamespace' => 'frontend\modules\frontend\controllers',
+//	'controller' => '@frontend\modules\frontend\siteController',
+	'defaultRoute' => 'site',
+	'layout' => '@frontend/layouts/main.php',
 	'modules' => [
 		'gii' => $params['modules.gii'],
-        'debug' => $params['modules.debug'],
-//        'frontend' => [
-//            'class' => 'frontend\modules\frontend\Module',
-//        ],
-//        'profile' => [
-//            'class' => 'frontend\modules\profile\Module',
-//        ],
+		'debug' => $params['modules.debug'],
+//		'frontend' => [
+//			'class' => 'frontend\modules\frontend\Module',
+//		],
+//		'profile' => [
+//			'class' => 'frontend\modules\profile\Module',
+//		],
 	],
 	'extensions' => require($rootDir . '/vendor/yiisoft/extensions.php'),
 	'components' => [
 		'db' => $params['components.db'],
 		'cache' => $params['components.cache'],
 		'mail' => $params['components.mail'],
-        'urlManager' => $params['components.urlManager'],
+		'urlManager' => $params['components.urlManager'],
 		'user' => [
 			'identityClass' => 'common\models\User',
 			'enableAutoLogin' => true,
@@ -49,19 +49,19 @@ $options = [
 			],
 		],
 		'errorHandler' => [
-			'errorAction' => 'site/error',                                      // orig
-//            'errorAction' => 'frontend/site/error',
+			'errorAction' => 'site/error',									  // orig
+//			'errorAction' => 'frontend/site/error',
 		],
 	],
 	'params' => $params,
 ];
 
 if ( YII_ENV == 'dev' ) {
-    $options['preload'] = ['debug', 'log'];
-    $options['modules']['debug'] = $params['modules.debug'];
+	$options['preload'] = ['debug', 'log'];
+	$options['modules']['debug'] = $params['modules.debug'];
 }
 else {
-    $options['preload'] = ['log'];
+	$options['preload'] = ['log'];
 }
 
 return $options;
