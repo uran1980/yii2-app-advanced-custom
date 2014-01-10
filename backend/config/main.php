@@ -19,7 +19,6 @@ $options = [
 	'layout' => '@backend/layouts/main.php',
 	'modules' => [
 		'gii' => $params['modules.gii'],
-		'debug' => $params['modules.debug'],
 	],
 	'extensions' => require($rootDir . '/vendor/yiisoft/extensions.php'),
 	'components' => [
