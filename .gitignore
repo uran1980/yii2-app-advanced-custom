@@ -1,5 +1,6 @@
 /yii
 
+nbproject/private/*
 ._*
 .~lock.*
 .buildpath
