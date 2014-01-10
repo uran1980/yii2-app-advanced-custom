@@ -21,7 +21,6 @@ $options = [
 	'layout' => '@frontend/layouts/main.php',
 	'modules' => [
 		'gii' => $params['modules.gii'],
-		'debug' => $params['modules.debug'],
 //		'frontend' => [
 //			'class' => 'frontend\modules\frontend\Module',
 //		],
