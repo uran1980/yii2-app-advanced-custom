@@ -49,8 +49,7 @@ $options = [
 if ( YII_ENV == 'dev' ) {
 	$options['preload'] = ['debug', 'log'];
 	$options['modules']['debug'] = $params['modules.debug'];
-}
-else {
+} else {
 	$options['preload'] = ['log'];
 }
 

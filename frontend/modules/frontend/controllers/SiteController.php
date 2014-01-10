@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace frontend\modules\frontend\controllers;
 
 use Yii;
-use yii\web\Controller;
+use common\controllers\FrontendController;
 use common\models\LoginForm;
-use frontend\models\ContactForm;
+use frontend\modules\frontend\models\ContactForm;
 use common\models\User;
 use yii\web\BadRequestHttpException;
 use yii\helpers\Security;
 
 use common\helpers\AppDebug;
 
-class SiteController extends Controller
+class SiteController extends FrontendController
 {
 	public function behaviors()
 	{

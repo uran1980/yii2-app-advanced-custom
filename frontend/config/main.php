@@ -13,20 +13,19 @@ $options = [
 	'id' => 'app-frontend',
 	'basePath' => dirname(__DIR__),
 	'vendorPath' => $rootDir . '/vendor',
-	'timeZone' => 'Europe/Kaliningrad',
-	'controllerNamespace' => 'frontend\controllers',							// orig
-//	'controllerNamespace' => 'frontend\modules\frontend\controllers',
-//	'controller' => '@frontend\modules\frontend\siteController',
+//	'controllerNamespace' => 'frontend\controllers',							// orig
+	'controllerNamespace' => 'frontend\modules\frontend\controllers',
+	'controller' => '@frontend\modules\frontend\SiteController',
 	'defaultRoute' => 'site',
 	'layout' => '@frontend/layouts/main.php',
 	'modules' => [
 		'gii' => $params['modules.gii'],
-//		'frontend' => [
-//			'class' => 'frontend\modules\frontend\Module',
-//		],
-//		'profile' => [
-//			'class' => 'frontend\modules\profile\Module',
-//		],
+		'frontend' => [
+			'class' => 'frontend\modules\frontend\Module',
+		],
+		'profile' => [
+			'class' => 'frontend\modules\profile\Module',
+		],
 	],
 	'extensions' => require($rootDir . '/vendor/yiisoft/extensions.php'),
 	'components' => [
@@ -48,8 +47,8 @@ $options = [
 			],
 		],
 		'errorHandler' => [
-			'errorAction' => 'site/error',									  // orig
-//			'errorAction' => 'frontend/site/error',
+//			'errorAction' => 'site/error',										// orig
+			'errorAction' => 'frontend/site/error',
 		],
 	],
 	'params' => $params,
@@ -58,8 +57,7 @@ $options = [
 if ( YII_ENV == 'dev' ) {
 	$options['preload'] = ['debug', 'log'];
 	$options['modules']['debug'] = $params['modules.debug'];
-}
-else {
+} else {
 	$options['preload'] = ['log'];
 }
 
