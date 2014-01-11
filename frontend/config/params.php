@@ -18,6 +18,7 @@ return [
 			'/site/login'					=> 'frontend/site/login',
 			'/site/logout'					=> 'frontend/site/logout',
 			'/site/request-password-reset'	=> 'frontend/site/request-password-reset',
+			'site/captcha'					=> 'frontend/site/captcha',
 		],
 	],
 ];
