@@ -3,10 +3,10 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\web\Controller;
+use common\components\controllers\BackendController;
 use common\models\LoginForm;
 
-class SiteController extends Controller
+class SiteController extends BackendController
 {
 	public function behaviors()
 	{

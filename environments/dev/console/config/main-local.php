@@ -1,3 +1,6 @@
 <?php
-return [
+$options = [
+    // TODO
 ];
+
+return $options;

@@ -1,6 +1,6 @@
 <?php
 // @see https://github.com/yiisoft/yii2/blob/master/docs/guide/configuration.md
-$rootDir = __DIR__ . '/../..';
+$rootDir = dirname(dirname(__DIR__));
 
 $params = array_merge(
 	require($rootDir . '/common/config/params.php'),
@@ -13,7 +13,6 @@ $options = [
 	'id' => 'app-frontend',
 	'basePath' => dirname(__DIR__),
 	'vendorPath' => $rootDir . '/vendor',
-//	'controllerNamespace' => 'frontend\controllers',							// orig
 	'controllerNamespace' => 'frontend\modules\frontend\controllers',
 	'controller' => '@frontend\modules\frontend\SiteController',
 	'defaultRoute' => 'site',
@@ -47,7 +46,6 @@ $options = [
 			],
 		],
 		'errorHandler' => [
-//			'errorAction' => 'site/error',										// orig
 			'errorAction' => 'frontend/site/error',
 		],
 	],

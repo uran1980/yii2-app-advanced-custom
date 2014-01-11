@@ -1,6 +1,6 @@
 <?php
 // @see https://github.com/yiisoft/yii2/blob/master/docs/guide/configuration.md
-$rootDir = __DIR__ . '/../..';
+$rootDir = dirname(dirname(__DIR__));
 
 $params = array_merge(
 	require($rootDir . '/common/config/params.php'),
@@ -30,6 +30,8 @@ $options = [
 			'identityClass' => 'common\models\User',
 			'enableAutoLogin' => true,
 		],
+		// ---------------------------- LOGGER ---------------------------------
+		// @see https://github.com/yiisoft/yii2/blob/master/docs/guide/logging.md
 		'log' => [
 			'traceLevel' => YII_DEBUG ? 3 : 0,
 			'targets' => [
@@ -39,6 +41,8 @@ $options = [
 				],
 			],
 		],
+		// ------------------------ ERROR HANDLER ------------------------------
+		// @see https://github.com/yiisoft/yii2/blob/master/docs/guide/error.md
 		'errorHandler' => [
 			'errorAction' => 'site/error',
 		],

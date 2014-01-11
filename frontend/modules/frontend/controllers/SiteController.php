@@ -44,13 +44,15 @@ class SiteController extends FrontendController
 			],
 			'captcha' => [
 				'class' => 'yii\captcha\CaptchaAction',
-				'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+				'fixedVerifyCode' => (YII_ENV_TEST ? 'testme' : null),
 			],
 		];
 	}
 
 	public function actionIndex()
 	{
+		// TODO
+
 		// debug info ----------------------------------------------------------
 		AppDebug::dump([
 			'method'					=> __METHOD__,

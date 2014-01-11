@@ -1,3 +1,6 @@
 <?php
-return [
+$params = [
+	// TODO
 ];
+
+return $params;

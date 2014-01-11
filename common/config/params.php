@@ -5,7 +5,7 @@ Yii::setAlias('frontend',	realpath(__DIR__ . '/../../frontend'));
 Yii::setAlias('backend',	realpath(__DIR__ . '/../../backend'));
 Yii::setAlias('console',	realpath(__DIR__ . '/../../console'));
 
-return [
+$options = [
 	'adminEmail' => 'admin@example.com',
 	'supportEmail' => 'support@example.com',
 
@@ -34,3 +34,5 @@ return [
 		'viewPath' => '@common/mails',
 	],
 ];
+
+return $options;

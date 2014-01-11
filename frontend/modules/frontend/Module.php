@@ -2,7 +2,6 @@
 
 namespace frontend\modules\frontend;
 
-
 class Module extends \yii\base\Module
 {
 	public $controllerNamespace = 'frontend\modules\frontend\controllers';
